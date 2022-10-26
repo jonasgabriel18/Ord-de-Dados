@@ -24,16 +24,11 @@ int minimum_value_index(int* v, int start_pos) {
 }
 
 int main() {
-    int vetor[SIZE] = {3, 1, 52, 13, 12, 21, 76, 2, 9, 10};
-    int swap_pointer = 0;
+    int vetor[SIZE] = {1, 3, 52, 13, 12, 21, 76, 2, 9, 10};
 
     for(int i = 0; i < SIZE; i++) {
-        int min_index = minimum_value_index(vetor, swap_pointer);
-
-        if(min_index != i) {
-            swap(vetor, swap_pointer, min_index);
-            swap_pointer++;
-        }
+        int min_index = minimum_value_index(vetor, i);
+        swap(vetor, i, min_index);
     }
 
     for(int i = 0; i < SIZE; i++)
